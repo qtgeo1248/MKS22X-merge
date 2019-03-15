@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class KDriver {
     public static void main(String[] args) {
         System.out.println("Size\t\tMax Value\tquick/builtin ratio ");
@@ -16,7 +18,7 @@ public class KDriver {
                     }
                     long t1, t2;
                     t1 = System.currentTimeMillis();
-                    Quick.quicksort(data2);
+                    Merge.mergesort(data2);
                     t2 = System.currentTimeMillis();
                     qtime += t2 - t1;
                     t1 = System.currentTimeMillis();
