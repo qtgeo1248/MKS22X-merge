@@ -11,5 +11,10 @@ public class Merge {
         mergesort(left, 0, left.length);
         int[] right= new int[end - (start + end) / 2 + 1];
         mergesort(right, 0, right.length);
+        int i = 0; //records for left array
+        int j = 0; //records for right array
+        for (int k = 0; k < data.length; k++) {
+            
+        }
     }
 }
