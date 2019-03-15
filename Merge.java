@@ -8,9 +8,12 @@ public class Merge {
             return;
         }
         int[] left = new int[(start + end) / 2 - start];
-        mergesort(left, 0, left.length);
+        for (int i = 0; i < left.length; i++) {
+            left[i] = data[i];
+        }
+        mergesort(left, 0, left.length - 1);
         int[] right= new int[end - (start + end) / 2 + 1];
-        mergesort(right, 0, right.length);
+        mergesort(right, 0, right.length - 1);
         int i = 0; //records for left array
         int j = 0; //records for right array
         for (int k = 0; k < data.length; k++) {
