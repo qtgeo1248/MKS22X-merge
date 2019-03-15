@@ -8,6 +8,8 @@ public class Merge {
             return;
         }
         int[] left = new int[(start + end) / 2 - start];
-        int[] right= new int[end - (start + end) / 2 + 1]
+        mergesort(left, 0, left.length);
+        int[] right= new int[end - (start + end) / 2 + 1];
+        mergesort(right, 0, right.length);
     }
 }
