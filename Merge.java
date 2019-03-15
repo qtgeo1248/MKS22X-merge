@@ -18,6 +18,14 @@ public class Merge {
                 data[k] = right[j];
             } else if (j >= right.length) {
                 data[k] = left[i];
+            } else {
+                int l = left[i];
+                int r = right[j];
+                if (l < r) {
+                    data[k] = l;
+                } else {
+                    data[k] = r;
+                }
             }
         }
     }
