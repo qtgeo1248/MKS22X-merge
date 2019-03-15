@@ -14,7 +14,11 @@ public class Merge {
         int i = 0; //records for left array
         int j = 0; //records for right array
         for (int k = 0; k < data.length; k++) {
-            
+            if (i >= left.length) {
+                data[k] = right[j];
+            } else if (j >= right.length) {
+                data[k] = left[i];
+            }
         }
     }
 }
