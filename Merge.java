@@ -4,6 +4,8 @@ public class Merge {
     }
 
     public static void mergesort(int[] data, int start, int end) {
-
+        if (start == end) {
+            return;
+        }
     }
 }
