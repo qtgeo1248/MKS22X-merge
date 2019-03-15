@@ -7,5 +7,7 @@ public class Merge {
         if (start == end) {
             return;
         }
+        int[] left = new int[(start + end) / 2 - start];
+        int[] right= new int[end - (start + end) / 2 + 1]
     }
 }
