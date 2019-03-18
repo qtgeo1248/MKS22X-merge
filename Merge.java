@@ -44,4 +44,8 @@ public class Merge {
         }
         //System.out.println(Arrays.toString(data));
     }
+
+    public static void mergesort(int[] data, int[] temp, int start, int end) {
+        if ()
+    }
 }
