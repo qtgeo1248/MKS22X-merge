@@ -49,5 +49,10 @@ public class Merge {
         if (start == end) {
             return;
         }
+        int i = 0;
+        int j = (start + end) / 2 + 1;
+        for (int k = 0; k < data.length; k++) {
+            
+        }
     }
 }
