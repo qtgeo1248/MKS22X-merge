@@ -49,10 +49,12 @@ public class Merge {
         if (start == end) {
             return;
         }
+        mergesort(temp, data, start, (start + end) / 2);
+        mergesort(temp, data, (start + end) / 2 + 1, end);
         int i = 0;
         int j = (start + end) / 2 + 1;
         for (int k = 0; k < data.length; k++) {
-            
+
         }
     }
 }
