@@ -4,11 +4,11 @@ import java.util.Random;
 public class KDriver {
     public static void main(String[] args) {
         Random gen = new Random();
-        System.out.println("Size\t\tMax Value\tmerge/builtin ratio ");
+        System.out.println("Size\t\tMax Value\tmerge/builtin ratio");
         int[] MAX_LIST = {1000000000, 500, 10};
         for (int MAX : MAX_LIST) {
             for (int size = 31250; size < 2000001; size *= 2) {
-                long qtime = 0;
+                long mtime = 0;
                 long btime = 0;
                 //average of 5 sorts.
                 for (int trial = 0; trial <= 5; trial++) {
@@ -22,7 +22,7 @@ public class KDriver {
                     t1 = System.currentTimeMillis();
                     Merge.mergesort(data2);
                     t2 = System.currentTimeMillis();
-                    qtime += t2 - t1;
+                    mtime += t2 - t1;
                     t1 = System.currentTimeMillis();
                     Arrays.sort(data1);
                     t2 = System.currentTimeMillis();
@@ -32,7 +32,7 @@ public class KDriver {
                         System.exit(0);
                     }
                 }
-                System.out.println(size + "\t\t" + MAX + "\t" + 1.0 * qtime / btime);
+                System.out.println(size + "\t\t" + MAX + "\t" + 1.0 * mtime / btime);
             }
             System.out.println();
         }
