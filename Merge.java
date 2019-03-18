@@ -58,6 +58,16 @@ public class Merge {
                 data[k] = temp[j];
             } else if (j >= data.length) {
                 data[k] = temp[i];
+            } else {
+                int l = temp[i];
+                int r = temp[j];
+                if (l < r) {
+                    data[k] = l;
+                    i++;
+                } else {
+                    data[k] = r;
+                    j++;
+                }
             }
         }
     }
