@@ -54,7 +54,11 @@ public class Merge {
         int i = 0;
         int j = (start + end) / 2 + 1;
         for (int k = 0; k < data.length; k++) {
-
+            if (i > (start + end) / 2) {
+                data[k] = temp[j];
+            } else if (j >= data.length) {
+                data[k] = temp[i];
+            }
         }
     }
 }
