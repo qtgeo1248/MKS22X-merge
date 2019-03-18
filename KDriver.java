@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class KDriver {
     public static void main(String[] args) {
-        Random gen = new Random(10);
+        Random gen = new Random(392847);
         System.out.println("Size\t\tMax Value\tmerge/builtin ratio ");
         int[] MAX_LIST = {1000000000, 500, 10};
         for (int MAX : MAX_LIST) {

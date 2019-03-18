@@ -11,12 +11,10 @@ public class Merge {
         if (data.length <= 1) {
             return;
         }
-        //System.out.println(Arrays.toString(data));
         int[] left = new int[(start + end) / 2 - start + 1];
         for (int i = 0; i < left.length; i++) {
             left[i] = data[i];
         }
-        //System.out.println(Arrays.toString(left));
         mergesort(left, 0, left.length - 1);
         int[] right = new int[end - (start + end) / 2];
         for (int i = 0; i < right.length; i++) {
@@ -44,24 +42,23 @@ public class Merge {
                 }
             }
         }
-        //System.out.println(Arrays.toString(data));
     }
 
     public static void mergesort(int[] data, int[] temp, int start, int end) {
         if (start == end) {
             return;
         }
-        System.out.println(Arrays.toString(data));
-        System.out.println(Arrays.toString(temp));
-        mergesort(temp, data, start, (start + end) / 2);
-        mergesort(temp, data, (start + end) / 2 + 1, end);
-        int i = start;
-        int j = (start + end) / 2 + 1;
-        for (int k = start; k < end; k++) {
+        int i = start; //left part
+        int j = (start + end) / 2 + 1; //right part
+        mergesort(temp, data, i, j - 1);
+        mergesort(temp, data, j, end);
+        for (int k = start; k <= end; k++) {
             if (i > (start + end) / 2) {
                 data[k] = temp[j];
-            } else if (j >= end) {
+                j++;
+            } else if (j > end) {
                 data[k] = temp[i];
+                i++;
             } else {
                 int l = temp[i];
                 int r = temp[j];
@@ -74,8 +71,5 @@ public class Merge {
                 }
             }
         }
-        System.out.println(i + ", " + j);
-        System.out.println(Arrays.toString(data));
-        System.out.println(Arrays.toString(temp));
     }
 }
