@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 public class Merge {
     public static void mergesort(int[] data) {
+        int[] temp = new int[data.length];
+        temp = Arrays.copyOf(data, data.length);
         mergesort(data, 0, data.length - 1);
     }
 
