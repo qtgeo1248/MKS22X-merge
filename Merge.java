@@ -4,7 +4,7 @@ public class Merge {
     public static void mergesort(int[] data) {
         int[] temp = new int[data.length];
         temp = Arrays.copyOf(data, data.length);
-        mergesort(data, 0, data.length - 1);
+        mergesort(data, temp, 0, data.length - 1);
     }
 
     public static void mergesort(int[] data, int start, int end) {
@@ -51,14 +51,16 @@ public class Merge {
         if (start == end) {
             return;
         }
+        System.out.println(Arrays.toString(data));
+        System.out.println(Arrays.toString(temp));
         mergesort(temp, data, start, (start + end) / 2);
         mergesort(temp, data, (start + end) / 2 + 1, end);
-        int i = 0;
+        int i = start;
         int j = (start + end) / 2 + 1;
-        for (int k = 0; k < data.length; k++) {
+        for (int k = start; k < end; k++) {
             if (i > (start + end) / 2) {
                 data[k] = temp[j];
-            } else if (j >= data.length) {
+            } else if (j >= end) {
                 data[k] = temp[i];
             } else {
                 int l = temp[i];
@@ -72,5 +74,8 @@ public class Merge {
                 }
             }
         }
+        System.out.println(i + ", " + j);
+        System.out.println(Arrays.toString(data));
+        System.out.println(Arrays.toString(temp));
     }
 }
