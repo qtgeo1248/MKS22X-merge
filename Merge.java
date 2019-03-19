@@ -17,10 +17,10 @@ public class Merge {
     public static void mergesort(int[] data) {
         int[] temp = new int[data.length];
         temp = Arrays.copyOf(data, data.length);
-        mergesort(data, temp, 0, data.length - 1);
+        lessSpace(data, temp, 0, data.length - 1);
     }
 
-    public static void mergesort(int[] data, int start, int end) {
+    public static void moreSpace(int[] data, int start, int end) {
         if (data.length <= 1) {
             return;
         }
@@ -28,12 +28,12 @@ public class Merge {
         for (int i = 0; i < left.length; i++) {
             left[i] = data[i];
         }
-        mergesort(left, 0, left.length - 1);
+        moreSpace(left, 0, left.length - 1);
         int[] right = new int[end - (start + end) / 2];
         for (int i = 0; i < right.length; i++) {
             right[i] = data[i + (start + end) / 2 + 1];
         }
-        mergesort(right, 0, right.length - 1);
+        moreSpace(right, 0, right.length - 1);
         int i = 0; //records for left array
         int j = 0; //records for right array
         for (int k = 0; k < data.length; k++) {
@@ -57,17 +57,14 @@ public class Merge {
         }
     }
 
-    public static void mergesort(int[] data, int[] temp, int start, int end) {
+    public static void lessSpace(int[] data, int[] temp, int start, int end) {
         if (start == end) {
-            return;
-        } else if (end - start <= 64) {
-            insertionSort(data, start, end);
             return;
         }
         int i = start; //left part
         int j = (start + end) / 2 + 1; //right part
-        mergesort(temp, data, i, j - 1);
-        mergesort(temp, data, j, end);
+        lessSpace(temp, data, i, j - 1);
+        lessSpace(temp, data, j, end);
         for (int k = start; k <= end; k++) {
             if (i > (start + end) / 2) {
                 data[k] = temp[j];

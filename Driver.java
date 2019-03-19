@@ -25,5 +25,9 @@ public class Driver {
         int[] test6 = {9, 2, 10, -2};
         Merge.mergesort(test6);
         System.out.println(Arrays.toString(test6));
+
+        int[] test7 = {9, 2, 10, -2, 7, 4, 1, -50, 39, 1};
+        Merge.mergesort(test7);
+        System.out.println(Arrays.toString(test7));
     }
 }
