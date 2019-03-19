@@ -1,6 +1,19 @@
 import java.util.Arrays;
 
 public class Merge {
+    public static void insertionSort(int[] data) {
+        for (int i = 1; i < data.length; i++) {
+            boolean isDone = false;
+            int now = data[i];
+            int j = i - 1;
+            while (j > -1 && data[j] > now) {
+                data[j + 1] = data[j];
+                j--;
+            }
+            data[j + 1] = now;
+        }
+    }
+    
     public static void mergesort(int[] data) {
         int[] temp = new int[data.length];
         temp = Arrays.copyOf(data, data.length);
