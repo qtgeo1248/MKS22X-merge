@@ -6,7 +6,7 @@ public class Merge {
             boolean isDone = false;
             int now = data[i];
             int j = i - 1;
-            while (j > -1 && data[j] > now) {
+            while (j > lo - 1 && data[j] > now) {
                 data[j + 1] = data[j];
                 j--;
             }
@@ -58,7 +58,8 @@ public class Merge {
     }
 
     public static void mergesort(int[] data, int[] temp, int start, int end) {
-        if (start == end) {
+        if (end - start <= 128) {
+            insertionSort(data, start, end);
             return;
         }
         int i = start; //left part
