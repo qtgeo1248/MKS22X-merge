@@ -17,7 +17,7 @@ public class Merge {
     public static void mergesort(int[] data) {
         int[] temp = new int[data.length];
         temp = Arrays.copyOf(data, data.length);
-        lessSpace(data, temp, 0, data.length - 1);
+        mergesort(data, temp, 0, data.length - 1);
     }
 
     public static void moreSpace(int[] data, int start, int end) {
@@ -57,14 +57,14 @@ public class Merge {
         }
     }
 
-    public static void lessSpace(int[] data, int[] temp, int start, int end) {
+    public static void mergesort(int[] data, int[] temp, int start, int end) {
         if (start == end) {
             return;
         }
         int i = start; //left part
         int j = (start + end) / 2 + 1; //right part
-        lessSpace(temp, data, i, j - 1);
-        lessSpace(temp, data, j, end);
+        mergesort(temp, data, i, j - 1);
+        mergesort(temp, data, j, end);
         for (int k = start; k <= end; k++) {
             if (i > (start + end) / 2) {
                 data[k] = temp[j];
