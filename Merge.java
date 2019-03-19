@@ -6,7 +6,7 @@ public class Merge {
             boolean isDone = false;
             int now = data[i];
             int j = i - 1;
-            while (j > lo - 1 && data[j] > now) {
+            while (j >= lo && data[j] > now) {
                 data[j + 1] = data[j];
                 j--;
             }
