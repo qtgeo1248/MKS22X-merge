@@ -58,7 +58,7 @@ public class Merge {
     }
 
     public static void mergesort(int[] data, int[] temp, int start, int end) {
-        if (end - start <= 128) { //insertion sort optimization
+        if (end - start <= 44) { //insertion sort optimization
             insertionSort(data, start, end);
             return;
         }
